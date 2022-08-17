@@ -5,6 +5,7 @@ import com.bridgelabz.employeepayrollapplicationdemo.entity.EmployeeEntity;
 import com.bridgelabz.employeepayrollapplicationdemo.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 @RestController
 public class EmployeeController {
@@ -22,16 +23,27 @@ public class EmployeeController {
 
     //URL Request Mapping for Employee Payroll Page i.e. emppayroll.html
     //URL - http://localhost:8080/emppayroll
-    @RequestMapping(value="/emppayroll")
+    @RequestMapping(value = "/emppayroll")
     public String openHome2() {
         return "emppayroll";
     }
 
     //POST Mapping for Employee Payroll Data to be stored in DB by Employee Service
-    @RequestMapping(value="/saveemp", method= RequestMethod.POST)
-    public @ResponseBody EmployeeEntity test(EmployeeEntity employeeEntity){
+    @RequestMapping(value = "/saveemp", method = RequestMethod.POST)
+    public @ResponseBody EmployeeEntity test(EmployeeEntity employeeEntity) {
         return employeeService.addEmployee(employeeEntity);
     }
 
+    @GetMapping({"/getemp"})
+    public ModelAndView getAllEmp() {
+        return employeeService.getAllEmp();
+    }
 
+
+    //POST Mapping for Employee Payroll Data to be stored in DB by Employee Service
+    @RequestMapping(value = "/saveemp2", method = RequestMethod.POST)
+    public ModelAndView test2(EmployeeEntity employeeEntity) {
+        employeeService.addEmployee2(employeeEntity);
+        return employeeService.getAllEmp();
+    }
 }
