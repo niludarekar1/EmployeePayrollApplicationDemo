@@ -1,6 +1,6 @@
-package com.bridgelabz.employeepayrollapp.service;
+package com.bridgelabz.employeepayrollapplicationdemo.service;
 
-import com.bridgelabz.employeepayrollapp.entity.EmployeeEntity;
+import com.bridgelabz.employeepayrollapplicationdemo.entity.EmployeeEntity;
 
 
 public interface IEmployeeService {
