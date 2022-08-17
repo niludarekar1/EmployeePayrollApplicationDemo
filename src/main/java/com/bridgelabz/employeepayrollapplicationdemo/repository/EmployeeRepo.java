@@ -1,6 +1,6 @@
-package com.bridgelabz.employeepayrollapp.repository;
+package com.bridgelabz.employeepayrollapplicationdemo.repository;
 
-import com.bridgelabz.employeepayrollapp.entity.EmployeeEntity;
+import com.bridgelabz.employeepayrollapplicationdemo.entity.EmployeeEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 //Employee Repo extending the JpaRepository to perform CRUD Operations
